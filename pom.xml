@@ -1,0 +1,77 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- Forked from Jenkins tasks-plugin version 4.31
+  
+       Change parent from analysis-pom to hudson-plugin-parent.
+       Depend on 3.0.0 version of analysis-core.
+  -->
+  
+    <parent>
+      <groupId>org.eclipse.hudson.plugins</groupId>
+      <artifactId>analysis-pom</artifactId>
+      <version>3.0.0-SNAPSHOT</version>
+      <relativePath>../analysis-pom/pom.xml</relativePath>
+    </parent>
+
+    <artifactId>tasks</artifactId>
+    <packaging>hpi</packaging>
+    <name>Task Scanner Plug-in</name>
+    <version>3.0.0-SNAPSHOT</version>
+    <description>This plug-in scans the workspace files for open tasks
+      and generates a trend report.</description>
+
+    <url>http://wiki.hudson-ci.org/display/HUDSON/Static+Code+Analysis+Plug-ins</url>
+  
+    <scm>
+        <connection>scm:git:git://github.com/hudson-plugins/${project.artifactId}-plugin.git</connection>
+        <developerConnection>scm:git:git@github.com:hudson-plugins/${project.artifactId}-plugin.git</developerConnection>
+        <url>https://github.com/hudson-plugins/${project.artifactId}-plugin</url>
+    </scm>
+  
+   <licenses>
+    <license>
+      <name>MIT license</name>
+      <comments>All source code is under the MIT license.</comments>
+    </license>
+    <license>
+      <name>LGPL</name>
+      <comments>All icons are made by Carlitus (Carles Carbonell
+        Bernado) and are under the LGPL.</comments>
+    </license>
+    <license>
+      <name>BSD license</name>
+      <comments>All YUI source code is under the BSD license.</comments>
+    </license>
+  </licenses>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.eclipse.hudson.plugins</groupId>
+      <artifactId>analysis-core</artifactId>
+      <version>3.0.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jvnet.hudson.plugins</groupId>
+      <artifactId>analysis-test</artifactId>
+      <version>1.8</version>
+      <!--version>1.4</version-->
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <repositories>
+    <repository>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <id>repo.jenkins-ci.org</id>
+      <url>http://repo.jenkins-ci.org/public/</url>
+    </repository>
+  </repositories>
+
+</project>  
+

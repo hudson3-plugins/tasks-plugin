@@ -1,0 +1,25 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define"
+  xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form"
+  xmlns:i="jelly:fmt" xmlns:local="local" xmlns:u="/util">
+  <st:header name="Content-Type" value="text/html;charset=UTF-8" />
+  <j:forEach var="file" items="${annotations.files}">
+    <table class="pane">
+      <tr class="pane">
+        <td class="pane-header">
+          <p>${%File}: ${file.shortName}</p>
+        </td>
+      </tr>
+      <j:forEach var="task" items="${file.annotations}">
+        <tr>
+          <td class="pane">
+            <p>
+              <u:sourceLink it="${it}" warning="${task}"/>
+              ${task.match}
+            </p>
+          </td>
+        </tr>
+      </j:forEach>
+    </table>
+    <p/>
+  </j:forEach>
+</j:jelly>
