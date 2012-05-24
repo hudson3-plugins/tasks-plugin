@@ -3,8 +3,8 @@
 
   <!-- Forked from Jenkins tasks-plugin version 4.31
   
-       Change parent from analysis-pom to hudson-plugin-parent.
-       Depend on 3.0.0 version of analysis-core.
+       Change groupId to org.eclipse.hudson.plugins.
+       Depend on Hudson version 3.0.0.
   -->
   
     <parent>
@@ -17,7 +17,7 @@
     <artifactId>tasks</artifactId>
     <packaging>hpi</packaging>
     <name>Task Scanner Plug-in</name>
-    <version>3.0.0-SNAPSHOT</version>
+    <version>4.31-SNAPSHOT</version>
     <description>This plug-in scans the workspace files for open tasks
       and generates a trend report.</description>
 
@@ -49,7 +49,7 @@
     <dependency>
       <groupId>org.eclipse.hudson.plugins</groupId>
       <artifactId>analysis-core</artifactId>
-      <version>3.0.0-SNAPSHOT</version>
+      <version>1.42-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.jvnet.hudson.plugins</groupId>
