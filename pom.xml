@@ -18,7 +18,7 @@
     <artifactId>tasks</artifactId>
     <packaging>hpi</packaging>
     <name>Task Scanner Plug-in</name>
-    <version>4.31</version>
+    <version>4.32-SNAPSHOT</version>
     <description>This plug-in scans the workspace files for open tasks
       and generates a trend report.</description>
 
