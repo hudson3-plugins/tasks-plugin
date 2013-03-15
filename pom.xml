@@ -6,14 +6,14 @@
     <groupId>org.hudsonci.plugins</groupId>
     <artifactId>analysis-pom</artifactId>
     <version>1.42-h-1</version>
-    <relativePath/>
+    <relativePath />
   </parent>
 
   <groupId>org.hudsonci.plugins</groupId>
   <artifactId>tasks</artifactId>
   <packaging>hpi</packaging>
   <name>Task Scanner Plug-in</name>
-  <version>4.35-h-1-SNAPSHOT</version>
+  <version>4.35-h-1</version>
   <url>http://wiki.hudson-ci.org/x/XoAs</url>
   <description>This plug-in scans the workspace files for open tasks
     and generates a trend report.</description>
