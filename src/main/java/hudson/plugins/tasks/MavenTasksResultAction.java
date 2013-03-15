@@ -61,28 +61,6 @@ public class MavenTasksResultAction extends TasksResultAction implements Aggrega
     // CHECKSTYLE:ON
 
     /**
-     * Creates a new instance of {@link MavenTasksResultAction}.
-     *
-     * @param owner
-     *            the associated build of this action
-     * @param healthDescriptor
-     *            health descriptor to use
-     * @param defaultEncoding
-     *            the default encoding to be used when reading and parsing files
-     * @param high
-     *            tag identifiers indicating high priority
-     * @param normal
-     *            tag identifiers indicating normal priority
-     * @param low
-     *            tag identifiers indicating low priority
-     */
-    public MavenTasksResultAction(final AbstractBuild<?, ?> owner, final HealthDescriptor healthDescriptor, final String defaultEncoding,
-            final String high, final String normal, final String low) {
-        super(owner, healthDescriptor);
-        initializeFields(defaultEncoding, high, normal, low);
-    }
-
-    /**
      * Initializes the fields of this action.
      *
      * @param defaultEncoding
@@ -106,7 +84,8 @@ public class MavenTasksResultAction extends TasksResultAction implements Aggrega
 
     /** {@inheritDoc} */
     public MavenAggregatedReport createAggregatedAction(final MavenModuleSetBuild build, final Map<MavenModule, List<MavenBuild>> moduleBuilds) {
-        return new MavenTasksResultAction(build, getHealthDescriptor(), defaultEncoding, high, normal, low);
+        return new MavenTasksResultAction(build, getHealthDescriptor(), defaultEncoding, high, normal, low,
+                new TasksResult(build, defaultEncoding, new TasksParserResult(), false, high, normal, low));
     }
 
     /** {@inheritDoc} */
@@ -121,7 +100,7 @@ public class MavenTasksResultAction extends TasksResultAction implements Aggrega
 
     /**
      * Called whenever a new module build is completed, to update the aggregated
-     * report. When multiple builds complete simultaneously, Jenkins serializes
+     * report. When multiple builds complete simultaneously, Hudson serializes
      * the execution of this method, so this method needs not be
      * concurrency-safe.
      *
@@ -142,7 +121,7 @@ public class MavenTasksResultAction extends TasksResultAction implements Aggrega
 
     /** Backward compatibility. @deprecated */
     @edu.umd.cs.findbugs.annotations.SuppressWarnings("UUF")
-    @SuppressWarnings("unused")
+    @SuppressWarnings("PMD")
     @Deprecated
     private transient String height;
 }

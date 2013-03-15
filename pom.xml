@@ -1,36 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <!-- Forked from Jenkins tasks-plugin version 4.31
-  
-       Change groupId to org.eclipse.hudson.plugins.
-       Depend on Hudson version 3.0.0.
-  -->
-  
-    <parent>
-      <groupId>org.hudsonci.plugins</groupId>
-      <artifactId>analysis-pom</artifactId>
-      <version>3.0.0-M3</version>
-      <relativePath>../analysis-pom/pom.xml</relativePath>
-    </parent>
-
+  <parent>
     <groupId>org.hudsonci.plugins</groupId>
-    <artifactId>tasks</artifactId>
-    <packaging>hpi</packaging>
-    <name>Task Scanner Plug-in</name>
-    <version>4.31-h-2-SNAPSHOT</version>
-    <description>This plug-in scans the workspace files for open tasks
-      and generates a trend report.</description>
+    <artifactId>analysis-pom</artifactId>
+    <version>1.42-h-1</version>
+    <relativePath/>
+  </parent>
 
-    <url>http://wiki.hudson-ci.org/display/HUDSON/Static+Code+Analysis+Plug-ins</url>
-  
-    <scm>
-        <connection>scm:git:git://github.com/hudson3-plugins/${project.artifactId}-plugin.git</connection>
-        <developerConnection>scm:git:git@github.com:hudson3-plugins/${project.artifactId}-plugin.git</developerConnection>
-        <url>https://github.com/hudson3-plugins/${project.artifactId}-plugin</url>
-    </scm>
-  
-   <licenses>
+  <groupId>org.hudsonci.plugins</groupId>
+  <artifactId>tasks</artifactId>
+  <packaging>hpi</packaging>
+  <name>Task Scanner Plug-in</name>
+  <version>4.35-h-1-SNAPSHOT</version>
+  <url>http://wiki.hudson-ci.org/x/XoAs</url>
+  <description>This plug-in scans the workspace files for open tasks
+    and generates a trend report.</description>
+
+  <licenses>
     <license>
       <name>MIT license</name>
       <comments>All source code is under the MIT license.</comments>
@@ -46,36 +34,46 @@
     </license>
   </licenses>
 
-  <properties>
-    <hudsonTags>recommended,report</hudsonTags>
-  </properties>
-
   <dependencies>
     <dependency>
       <groupId>org.hudsonci.plugins</groupId>
       <artifactId>analysis-core</artifactId>
-      <version>1.42-h-1</version>
+      <version>1.49-h-1</version>
     </dependency>
     <dependency>
-      <groupId>org.jvnet.hudson.plugins</groupId>
+      <groupId>org.hudsonci.plugins</groupId>
       <artifactId>analysis-test</artifactId>
-      <version>1.8</version>
-      <!--version>1.4</version-->
+      <version>1.9-h-1</version>
       <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>xerces</groupId>
-      <artifactId>xercesImpl</artifactId>
-      <version>2.8.1</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>xml-apis</groupId>
-      <artifactId>xml-apis</artifactId>
-      <version>1.3.03</version>
-      <scope>provided</scope>
     </dependency>
   </dependencies>
 
-</project>  
+  <scm>
+    <connection>scm:git:git://github.com/hudson3-plugins/tasks.git</connection>
+    <developerConnection>scm:git:git@github.com:hudson3-plugins/tasks.git</developerConnection>
+    <url>https://github.com/hudson3-plugins/tasks</url>
+  </scm>
 
+  
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>repo.jenkins-ci.org</id>
+      <url>http://repo.jenkins-ci.org/public/</url>
+    </pluginRepository>
+  </pluginRepositories>
+  
+<developers>
+    <developer>
+      <id>bobfoster</id>
+      <name>Bob Foster</name>
+      <email>bobfoster@gmail.com</email>
+      <roles>
+        <role>Maintainer</role>
+      </roles>
+    </developer>
+  </developers>
+  <properties>
+    <hudsonTags>report</hudsonTags>
+  </properties>
+</project>

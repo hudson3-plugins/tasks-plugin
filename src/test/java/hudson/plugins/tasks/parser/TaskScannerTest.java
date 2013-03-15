@@ -39,7 +39,7 @@ public class TaskScannerTest {
      *
      * @throws IOException
      *      if the file could not be read
-     * @see <a href="http://issues.jenkins-ci.org/browse/JENKINS-12782">Issue 12782</a>
+     * @see <a href="http://issues.jenkins-ci.org/browse/HUDSON-12782">Issue 12782</a>
      */
     @Test
     public void issue12782() throws IOException {
