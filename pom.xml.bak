@@ -3,18 +3,17 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.hudsonci.plugins</groupId>
+    <groupId>org.jvnet.hudson.plugins</groupId>
     <artifactId>analysis-pom</artifactId>
-    <version>1.42-h-1</version>
-    <relativePath/>
+    <version>1.42</version>
+    <relativePath>../analysis-pom/pom.xml</relativePath>
   </parent>
 
-  <groupId>org.hudsonci.plugins</groupId>
   <artifactId>tasks</artifactId>
   <packaging>hpi</packaging>
   <name>Task Scanner Plug-in</name>
-  <version>4.36-h-1-SNAPSHOT</version>
-  <url>http://wiki.hudson-ci.org/x/XoAs</url>
+  <version>4.36</version>
+  <url>http://wiki.jenkins-ci.org/x/XoAs</url>
   <description>This plug-in scans the workspace files for open tasks
     and generates a trend report.</description>
 
@@ -36,23 +35,30 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.hudsonci.plugins</groupId>
+      <groupId>org.jvnet.hudson.plugins</groupId>
       <artifactId>analysis-core</artifactId>
-      <version>1.49-h-1</version>
+      <version>1.49</version>
     </dependency>
     <dependency>
-      <groupId>org.hudsonci.plugins</groupId>
+      <groupId>org.jvnet.hudson.plugins</groupId>
       <artifactId>analysis-test</artifactId>
-      <version>1.10-h-1</version>
+      <version>1.9</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
 
   <scm>
-    <connection>scm:git:git://github.com/hudson3-plugins/tasks-plugin.git</connection>
-    <developerConnection>scm:git:git@github.com:hudson3-plugins/tasks-plugin.git</developerConnection>
-    <url>https://github.com/hudson3-plugins/tasks-plugin</url>
+    <connection>scm:git:git://github.com/jenkinsci/${project.artifactId}-plugin.git</connection>
+    <developerConnection>scm:git:git@github.com:jenkinsci/${project.artifactId}-plugin.git</developerConnection>
+    <url>https://github.com/jenkinsci/${project.artifactId}-plugin</url>
   </scm>
+
+  <repositories>
+    <repository>
+      <id>repo.jenkins-ci.org</id>
+      <url>http://repo.jenkins-ci.org/public/</url>
+    </repository>
+  </repositories>
 
   <pluginRepositories>
     <pluginRepository>
@@ -61,15 +67,4 @@
     </pluginRepository>
   </pluginRepositories>
   
-  <developers>
-    <developer>
-      <id>drulli</id>
-      <name>Ulli Hafner</name>
-      <email>ullrich.hafner@gmail.com</email>
-    </developer>
-  </developers>
-  
-  <properties>
-    <hudsonTags>report</hudsonTags>
-  </properties>
 </project>
